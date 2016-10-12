@@ -10,13 +10,10 @@ import os
 import textwrap
 import getpass
 import time
-try:
-    # Python 3
-    from configparser import ConfigParser
-except ImportError:
-    # Python 2
-    import ConfigParser
-
+if sys.version_info >= (3,0):
+        from configparser import ConfigParser
+else:
+        import ConfigParser
 try:
     input = raw_input
 except NameError:
